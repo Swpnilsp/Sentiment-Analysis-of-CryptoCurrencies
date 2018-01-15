@@ -11,31 +11,31 @@ library(ggthemes)
 
 ## bitcoin, ripple,Ethereum 
 ## 
-consumer_key<-'HjGiIoPNW4wa5oMRKDOUtDHdU'
-consumer_secret<-'ifcwxyOLUPNsr1Rci1qkTaXAaCx5EGyZ0OxaFEAIUQyAQQcNFf'
-access_token<-'81578669-CxBJMX8fHKVy8RBTZK5gHKojx3HBQTiVFimTdLMEl'
-access_token_secret<-'H9gNZgVWEzqFxAGoU978wXWGceZdGmYMHQQ2mtS3wPlYS'
+consumer_key<-'xxxyyyzzz'
+consumer_secret<-'xxxyyyzzz'
+access_token<-'xxxyyyzzz'
+access_token_secret<-'xxxyyyzzz'
 
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_token_secret)
 bitcoin = twitteR::searchTwitter('#bitcoin -filter:retweets',lang = "en", n = 5000, since = '2017-12-24',
                             until = '2017-12-31',retryOnRateLimit = 1)
 d = twitteR::twListToDF(bitcoin)
-write.csv(d,"/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/bitcoin.csv")
+write.csv(d,"bitcoin.csv")
 
 ripple = twitteR::searchTwitter('#ripple -filter:retweets',lang = "en", n = 5000, since = '2017-12-24',
                                until = '2017-12-31',retryOnRateLimit = 1)
 d = twitteR::twListToDF(ripple)
-write.csv(d,"/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ripple.csv")
+write.csv(d,"ripple.csv")
 
 ethereum = twitteR::searchTwitter('#ethereum -filter:retweets',lang = "en", n = 5000, since = '2017-12-24',
                                 until = '2017-12-31',retryOnRateLimit = 1)
 d = twitteR::twListToDF(ethereum)
-write.csv(d,"/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ethereum.csv")
+write.csv(d,"ethereum.csv")
 
 
-bitcoin<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/bitcoin.csv",fileEncoding="latin1")
-ripple<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ripple.csv",fileEncoding="latin1")
-ethereum<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ethereum.csv",fileEncoding="latin1")
+bitcoin<-read.csv("bitcoin.csv",fileEncoding="latin1")
+ripple<-read.csv("ripple.csv",fileEncoding="latin1")
+ethereum<-read.csv("ethereum.csv",fileEncoding="latin1")
 
 
 
@@ -117,9 +117,9 @@ wordcloud(names(ethereum_wf),ethereum_wf,colors = c("grey80", "darkgoldenrod1", 
 
 
 ## common words in both iphonex and note8 related tweets
-bitcoin<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/bitcoin.csv",fileEncoding="latin1")
-ripple<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ripple.csv",fileEncoding="latin1")
-ethereum<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ethereum.csv",fileEncoding="latin1")
+bitcoin<-read.csv("bitcoin.csv",fileEncoding="latin1")
+ripple<-read.csv("ripple.csv",fileEncoding="latin1")
+ethereum<-read.csv("ethereum.csv",fileEncoding="latin1")
 
 bitcoin<-paste(bitcoin$text,collapse = '')
 ripple<-paste(ripple$text,collapse = '')
@@ -140,9 +140,9 @@ commonality.cloud(all_tweets_m,colors = c("grey80", "darkgoldenrod1", "tomato"),
 
 
 ## Sentiment analysis
-bitcoin<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/bitcoin.csv",fileEncoding="latin1")
-ripple<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ripple.csv",fileEncoding="latin1")
-ethereum<-read.csv("/Users/swapnilpatil/Study/MS-Bana/Projects/CryptoCurrency/ethereum.csv",fileEncoding="latin1")
+bitcoin<-read.csv("bitcoin.csv",fileEncoding="latin1")
+ripple<-read.csv("ripple.csv",fileEncoding="latin1")
+ethereum<-read.csv("ethereum.csv",fileEncoding="latin1")
 
 bitcoin<-bitcoin$text
 ripple<-ripple$text
